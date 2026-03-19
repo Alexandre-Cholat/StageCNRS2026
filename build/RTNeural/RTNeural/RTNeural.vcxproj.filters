@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\RTNeural.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\activation\activation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\activation\activation_eigen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\activation\activation_xsimd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\Layer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv1d\conv1d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv1d_stateless\conv1d_stateless.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv1d_stateless\conv1d_stateless_eigen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv2d\conv2d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv2d\conv2d_eigen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\dense\dense.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\dense\dense_eigen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\dense\dense_xsimd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\gru\gru.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\gru\gru_eigen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\gru\gru_xsimd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\lstm\lstm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\lstm\lstm_eigen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\lstm\lstm_xsimd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\batchnorm\batchnorm2d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\batchnorm\batchnorm2d_eigen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\model_loader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\RTNeural.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv1d\conv1d.tpp" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv1d_stateless\conv1d_stateless.tpp" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv2d\conv2d.tpp" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv2d\conv2d_eigen.tpp" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\gru\gru.tpp" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\gru\gru_eigen.tpp" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\gru\gru_xsimd.tpp" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\lstm\lstm.tpp" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\lstm\lstm_eigen.tpp" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\lstm\lstm_xsimd.tpp" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\batchnorm\batchnorm2d.tpp" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\batchnorm\batchnorm2d_eigen.tpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7F8C5B50-887E-3692-A7F1-C8D8E279B7DF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{E15BD9A2-CD7E-3E09-A6D2-94EAA6216411}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

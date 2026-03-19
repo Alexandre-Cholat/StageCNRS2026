@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\build\CMakeFiles\0b97282e99cd284462773f4d4caf2a63\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{07D0AFD2-B2FB-3E8D-A43F-6B3F080B0787}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

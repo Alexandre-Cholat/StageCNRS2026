@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3B48BBED-6D69-365D-92AA-30D7A179BD4E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>RTNeural</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\build\RTNeural\RTNeural\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">RTNeural.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">RTNeural</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\build\RTNeural\RTNeural\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">RTNeural.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">RTNeural</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\build\RTNeural\RTNeural\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">RTNeural.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">RTNeural</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\build\RTNeural\RTNeural\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">RTNeural.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">RTNeural</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\..\modules\json;C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\modules\Eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;RTNEURAL_NAMESPACE=RTNeural;RTNEURAL_DEFAULT_ALIGNMENT=16;RTNEURAL_USE_EIGEN=1;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;RTNEURAL_NAMESPACE=RTNeural;RTNEURAL_DEFAULT_ALIGNMENT=16;RTNEURAL_USE_EIGEN=1;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\..\modules\json;C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\modules\Eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\..\modules\json;C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\modules\Eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\..\modules\json;C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\modules\Eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;RTNEURAL_NAMESPACE=RTNeural;RTNEURAL_DEFAULT_ALIGNMENT=16;RTNEURAL_USE_EIGEN=1;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;RTNEURAL_NAMESPACE=RTNeural;RTNEURAL_DEFAULT_ALIGNMENT=16;RTNEURAL_USE_EIGEN=1;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\..\modules\json;C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\modules\Eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\..\modules\json;C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\modules\Eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\..\modules\json;C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\modules\Eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;RTNEURAL_NAMESPACE=RTNeural;RTNEURAL_DEFAULT_ALIGNMENT=16;RTNEURAL_USE_EIGEN=1;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;RTNEURAL_NAMESPACE=RTNeural;RTNEURAL_DEFAULT_ALIGNMENT=16;RTNEURAL_USE_EIGEN=1;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\..\modules\json;C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\modules\Eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\..\modules\json;C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\modules\Eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\..\modules\json;C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\modules\Eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;RTNEURAL_NAMESPACE=RTNeural;RTNEURAL_DEFAULT_ALIGNMENT=16;RTNEURAL_USE_EIGEN=1;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;RTNEURAL_NAMESPACE=RTNeural;RTNEURAL_DEFAULT_ALIGNMENT=16;RTNEURAL_USE_EIGEN=1;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\..\modules\json;C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\modules\Eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\..\modules\json;C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\modules\Eigen;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/RTNeural/RTNeural/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/alexa/OneDrive/Desktop/StageCNRS2026 -BC:/Users/alexa/OneDrive/Desktop/StageCNRS2026/build --check-stamp-file C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/build/RTNeural/RTNeural/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\build\RTNeural\RTNeural\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/RTNeural/RTNeural/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/alexa/OneDrive/Desktop/StageCNRS2026 -BC:/Users/alexa/OneDrive/Desktop/StageCNRS2026/build --check-stamp-file C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/build/RTNeural/RTNeural/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\build\RTNeural\RTNeural\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/RTNeural/RTNeural/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/alexa/OneDrive/Desktop/StageCNRS2026 -BC:/Users/alexa/OneDrive/Desktop/StageCNRS2026/build --check-stamp-file C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/build/RTNeural/RTNeural/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\build\RTNeural\RTNeural\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/RTNeural/RTNeural/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/alexa/OneDrive/Desktop/StageCNRS2026 -BC:/Users/alexa/OneDrive/Desktop/StageCNRS2026/build --check-stamp-file C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/build/RTNeural/RTNeural/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\build\RTNeural\RTNeural\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\activation\activation.h" />
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\activation\activation_eigen.h" />
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\activation\activation_xsimd.h" />
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\Model.h" />
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\Layer.h" />
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv1d\conv1d.h" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv1d\conv1d.tpp">
+    </None>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv1d_stateless\conv1d_stateless.h" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv1d_stateless\conv1d_stateless.tpp">
+    </None>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv1d_stateless\conv1d_stateless_eigen.h" />
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv2d\conv2d.h" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv2d\conv2d.tpp">
+    </None>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv2d\conv2d_eigen.h" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\conv2d\conv2d_eigen.tpp">
+    </None>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\dense\dense.h" />
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\dense\dense_eigen.h" />
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\dense\dense_xsimd.h" />
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\gru\gru.h" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\gru\gru.tpp">
+    </None>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\gru\gru_eigen.h" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\gru\gru_eigen.tpp">
+    </None>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\gru\gru_xsimd.h" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\gru\gru_xsimd.tpp">
+    </None>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\lstm\lstm.h" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\lstm\lstm.tpp">
+    </None>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\lstm\lstm_eigen.h" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\lstm\lstm_eigen.tpp">
+    </None>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\lstm\lstm_xsimd.h" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\lstm\lstm_xsimd.tpp">
+    </None>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\batchnorm\batchnorm2d.h" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\batchnorm\batchnorm2d.tpp">
+    </None>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\batchnorm\batchnorm2d_eigen.h" />
+    <None Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\batchnorm\batchnorm2d_eigen.tpp">
+    </None>
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\model_loader.h" />
+    <ClInclude Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\RTNeural.h" />
+    <ClCompile Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\RTNeural\RTNeural\RTNeural.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\build\ZERO_CHECK.vcxproj">
+      <Project>{1F9F534F-4B65-3020-A447-C714F0823B18}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

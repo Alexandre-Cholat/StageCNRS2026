@@ -1,0 +1,6 @@
+# CMake generation dependency list for this directory.
+C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/RTNeural/CMakeLists.txt
+C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/RTNeural/cmake/CXXStandard.cmake
+C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/RTNeural/cmake/ChooseBackend.cmake
+C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/RTNeural/cmake/SIMDExtensions.cmake
+C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/RTNeural/cmake/Sanitizers.cmake
