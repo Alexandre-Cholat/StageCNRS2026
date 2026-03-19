@@ -122,6 +122,7 @@ using F0ModelType = RTNeural::ModelT<float, 13, 1,
     RTNeural::DenseT<float, 64, 32>,         // 6
     RTNeural::ReLuActivationT<float, 32>,    // 7
     
+    // Conv1DT with 17 frame buffer (introduces 80ms latency)
     RTNeural::Conv1DT<float, 32, 64, 17, 1>, // 8
     RTNeural::ReLuActivationT<float, 64>,    // 9
     
@@ -142,7 +143,7 @@ int main() {
         std::cout << "Initializing RTNeural Compile-Time Model..." << std::endl;
         alignas(32) F0ModelType f0_model;
 
-        // 1. Load the raw PyTorch state_dict JSON
+        // 1. Load the raw PyTorch state_dict JSON weights
         std::ifstream jsonStream("C:\\Users\\alexa\\OneDrive\\Desktop\\StageCNRS2026\\model7_weights.json");
         if (!jsonStream.is_open()) {
             std::cerr << "Failed to find model weights!" << std::endl;
@@ -152,7 +153,7 @@ int main() {
         nlohmann::json modelJson;
         jsonStream >> modelJson;
 
-        std::cout << "Mapping PyTorch weights to C++ layers..." << std::endl;
+        std::cout << "Loading weights into RTNeural layers..." << std::endl;
         
         // 2. Load Weights into the specific indices
         RTNeural::torch_helpers::loadDense<float>(modelJson, "encoder.network.0.", f0_model.get<0>());
@@ -182,22 +183,38 @@ int main() {
 
         // 5. Run inference
         alignas(32) float input_array[13];
+        float squared_error_sum = 0.0;
+        float absolute_error_sum = 0.0;
         for (const auto &frame : frames) {
+
+            // Normalization
             for (int i = 0; i < 13; ++i) {
                 input_array[i] = static_cast<float>((frame.mfcc[i] - mfcc_mean[i]) / mfcc_std[i]);
             }
-
+            
+            // Forward pass:
+            // RTNeural automatically maintains an internal "state" buffer. 
+            // It remembers the previous frames and uses them to calculate the 
+            // temporal context for the current prediction
             float normalized_f0_pred = f0_model.forward(input_array);
-            float log10_f0_pred = (normalized_f0_pred * f0_std) + f0_mean;
-            float f0_hz_pred = std::pow(10.0f, log10_f0_pred);
 
+            // remove normalisation
+            float f0_pred = (normalized_f0_pred * f0_std) + f0_mean;
             
             std::cout << "Frame: " << frame.frame_idx
-                        << " | Pred F0 (Hz): " << f0_hz_pred
-                        << " | Target: " << frame.target_f0 << std::endl;
+                        << " | Pred F0 : " << f0_pred
+                        << " | Target F0 : " << frame.target_f0 << std::endl;
+            
+            squared_error_sum += std::pow(f0_pred - static_cast<float>(frame.target_f0), 2);
+            absolute_error_sum += std::abs(f0_pred - static_cast<float>(frame.target_f0));
         }
 
-        std::cout << "Inference complete!" << std::endl;
+        float mse = squared_error_sum / frames.size();
+        float mae = absolute_error_sum / frames.size();
+
+        std::cout << "Inference complete." << std::endl;
+        std::cout << "Mean Squared Error: " << mse << std::endl;
+        std::cout << "Mean Absolute Error: " << mae << std::endl;
         return 0;
     } catch (const std::exception& e) {
         std::cerr << "\nFATAL CRASH DETECTED: " << e.what() << std::endl;
