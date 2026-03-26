@@ -204,36 +204,55 @@ int main()
         alignas(32) float input_array[13];
         float squared_error_sum = 0.0;
         float absolute_error_sum = 0.0;
-        for (const auto &frame : frames)
-        {
 
-            // Normalization
-            for (int i = 0; i < 13; ++i)
+        f0_model.reset();
+
+        // Feed the first 8 frames to fill the "future" side of the convolution window.
+        int delay = 8; // (kernel_size - 1) / 2
+        int num_frames = frames.size();
+
+        for (int i = 0; i < delay; ++i)
+        {
+            if (i < num_frames)
             {
-                input_array[i] = static_cast<float>((frame.mfcc[i] - mfcc_mean[i]) / mfcc_std[i]);
+                for (int j = 0; j < 13; ++j)
+                {
+                    input_array[j] = static_cast<float>((frames[i].mfcc[j] - mfcc_mean[j]) / mfcc_std[j]);
+                }
+                f0_model.forward(input_array);
+            }
+        }
+
+        for (int i = 0; i < num_frames; ++i)
+        {
+            int feed_idx = i + delay;
+
+            // If we have future frames available, normalize and feed them
+            if (feed_idx < num_frames)
+            {
+                for (int j = 0; j < 13; ++j)
+                {
+                    input_array[j] = static_cast<float>((frames[feed_idx].mfcc[j] - mfcc_mean[j]) / mfcc_std[j]);
+                }
             }
 
-            // Forward pass:
-            // RTNeural has an internal "state" buffer.
-            // - remembers previous frames and uses them to calculate current prediction
+            // forward pass
             float normalized_f0_pred = f0_model.forward(input_array);
-
-            // remove normalisation
+            // remove normalization
             float f0_pred = (normalized_f0_pred * f0_std) + f0_mean;
 
-            //terminal output
-            std::cout << "Frame: " << frame.frame_idx
+            // print to console
+            std::cout << "Frame: " << frames[i].frame_idx
                       << " | Pred F0 : " << f0_pred
-                      << " | Target F0 : " << frame.target_f0 << std::endl;
+                      << " | Target F0 : " << frames[i].target_f0 << std::endl;
 
             // write to CSV
-            csv_file << frame.frame_idx << "," 
-             << f0_pred << "," 
-             << frame.target_f0 << "\n";
+            csv_file << frames[i].frame_idx << ","
+                     << f0_pred << ","
+                     << frames[i].target_f0 << "\n";
 
-            // ne pas caluler les erreurs ici. sauvgarder f0 predites en csv et faire analyse en python.
-            squared_error_sum += std::pow(f0_pred - static_cast<float>(frame.target_f0), 2);
-            absolute_error_sum += std::abs(f0_pred - static_cast<float>(frame.target_f0));
+            squared_error_sum += std::pow(f0_pred - static_cast<float>(frames[i].target_f0), 2);
+            absolute_error_sum += std::abs(f0_pred - static_cast<float>(frames[i].target_f0));
         }
         csv_file.close();
 

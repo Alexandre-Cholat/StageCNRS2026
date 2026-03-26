@@ -44,7 +44,7 @@ def visualize_comparison(cpp_csv_path, pytorch_csv_path, num_frames):
     # Aesthetics
     plt.title(f"Offline vs Real-Time f0_pred - {num_frames} frames", fontsize=16)
     plt.xlabel("Index", fontsize=12)
-    plt.ylabel("F0 (log10 or Hz based on your target)", fontsize=12)
+    plt.ylabel("log10 F0", fontsize=12)
     plt.legend(loc="upper right", fontsize=11)
     
     # Add minor gridlines for easier visual alignment
@@ -56,7 +56,7 @@ def visualize_comparison(cpp_csv_path, pytorch_csv_path, num_frames):
 
 if __name__ == "__main__":
     # Update these with your exact generated filenames
-    CPP_CSV = "C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\audio-data-prediction\\real-time-predictions_2026-03-26_13-26-57.csv" 
+    CPP_CSV = "C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\audio-data-prediction\\real-time-corrected-predictions_2026-03-26_14-50-57.csv"
     PYTORCH_CSV = "C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\audio-data-prediction\\pytorch-offline-preds_2026-03-26_13-57-40.csv"
     
     # Adjust start_frame and num_frames to isolate exactly one sentence
