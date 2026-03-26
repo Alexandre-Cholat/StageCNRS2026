@@ -8,6 +8,10 @@
 #include <cmath>
 #include <RTNeural/RTNeural.h>
 
+#include <chrono>  // For fetching system time
+#include <ctime>   // For converting time structures
+#include <iomanip> // For formatting the time (std::put_time)
+
 // DATA STRUCTURES
 struct AudioFrame
 {
@@ -139,7 +143,6 @@ int main()
         std::cout << "Initializing RTNeural Compile-Time Model..." << std::endl;
         alignas(32) F0ModelType f0_model;
 
-
         // load weights
         std::ifstream jsonStream("C:\\Users\\alexa\\OneDrive\\Desktop\\StageCNRS2026\\model7_weights.json");
         if (!jsonStream.is_open())
@@ -182,6 +185,21 @@ int main()
 
         std::cout << "Starting inference on " << frames.size() << " frames..." << std::endl;
 
+        // create output CSV for predictions
+        auto now = std::chrono::system_clock::now();
+        std::time_t now_c = std::chrono::system_clock::to_time_t(now);
+
+        // build the filename
+        std::stringstream filename_ss;
+        filename_ss << "real-time-predictions_"
+                    << std::put_time(std::localtime(&now_c), "%Y-%m-%d_%H-%M-%S")
+                    << ".csv";
+
+        std::string filename = filename_ss.str();
+        std::ofstream csv_file(filename);
+        // Write the CSV header
+        csv_file << "frame_idx,f0_pred,target_f0\n";
+
         // run inference
         alignas(32) float input_array[13];
         float squared_error_sum = 0.0;
@@ -203,14 +221,21 @@ int main()
             // remove normalisation
             float f0_pred = (normalized_f0_pred * f0_std) + f0_mean;
 
+            //terminal output
             std::cout << "Frame: " << frame.frame_idx
                       << " | Pred F0 : " << f0_pred
                       << " | Target F0 : " << frame.target_f0 << std::endl;
 
-                      //ne pas csaluler les erreurs ici. sauvgarder f0 predites en csv et faire analyse en python.
+            // write to CSV
+            csv_file << frame.frame_idx << "," 
+             << f0_pred << "," 
+             << frame.target_f0 << "\n";
+
+            // ne pas caluler les erreurs ici. sauvgarder f0 predites en csv et faire analyse en python.
             squared_error_sum += std::pow(f0_pred - static_cast<float>(frame.target_f0), 2);
             absolute_error_sum += std::abs(f0_pred - static_cast<float>(frame.target_f0));
         }
+        csv_file.close();
 
         float mse = squared_error_sum / frames.size();
         float mae = absolute_error_sum / frames.size();
