@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "RelWithDebInfo/inf_architecture.exe"
+			"path" : "Debug/inf_architecture.exe"
 		},
 		{
-			"path" : "RelWithDebInfo/inf_architecture.pdb"
+			"path" : "Debug/inf_architecture.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -45,7 +45,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /Zi /O2 /Ob1 /DNDEBUG -std:c++17 -MD"
+					"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -std:c++17 -MDd"
 				}
 			],
 			"defines" : 
@@ -96,11 +96,11 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 2,
 			"id" : "RTNeural::@5c40b2b27f12861aa5e2"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "inf_architecture::@6890427a1f51a3e7e1df",
@@ -109,7 +109,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /Zi /O2 /Ob1 /DNDEBUG -MD",
+				"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd",
 				"role" : "flags"
 			},
 			{
@@ -118,7 +118,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "RTNeural\\RTNeural\\RelWithDebInfo\\RTNeural.lib",
+				"fragment" : "RTNeural\\RTNeural\\Debug\\RTNeural.lib",
 				"role" : "libraries"
 			},
 			{

@@ -5,7 +5,7 @@
 		"commands" : [],
 		"files" : 
 		[
-			"RTNeural/CMakeLists.txt"
+			"CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -17,19 +17,22 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+			"id" : "RTNeural::@5c40b2b27f12861aa5e2"
 		},
 		{
-			"id" : "RTNeural::@5c40b2b27f12861aa5e2"
+			"id" : "inf_architecture::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "ALL_BUILD::@716782cb295ff54e4455",
+	"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
 	"isGeneratorProvided" : true,
 	"name" : "ALL_BUILD",
 	"paths" : 
 	{
-		"build" : "RTNeural",
-		"source" : "RTNeural"
+		"build" : ".",
+		"source" : "."
 	},
 	"sources" : [],
 	"type" : "UTILITY"
