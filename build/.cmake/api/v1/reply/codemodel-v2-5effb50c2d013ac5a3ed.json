@@ -1,0 +1,644 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4
+					]
+				},
+				{
+					"build" : "RTNeural",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-RTNeural-Debug-a4b2d23cb641798cdadc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "RTNeural",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "RTNeural/RTNeural",
+					"jsonFile" : "directory-RTNeural.RTNeural-Debug-436a184bc37cd67414e8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "RTNeural/RTNeural",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "scripts",
+					"jsonFile" : "directory-scripts-Debug-0573fbdaae33ba3dc862.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "scripts",
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						3
+					],
+					"name" : "StageCNRS2026",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2
+					],
+					"name" : "RTNeural",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-436b56ee8686e111aed6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@716782cb295ff54e4455",
+					"jsonFile" : "target-ALL_BUILD-Debug-ae74b489c97f8f57711f.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "RTNeural::@5c40b2b27f12861aa5e2",
+					"jsonFile" : "target-RTNeural-Debug-bd097490280fc7274583.json",
+					"name" : "RTNeural",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-c842971790590b5cfdd3.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "inf_architecture::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-inf_architecture-Debug-aa1d6055d449ecae0f57.json",
+					"name" : "inf_architecture",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "mfcc_calc::@de1a740d5dc98ffd5d0e",
+					"jsonFile" : "target-mfcc_calc-Debug-85a6d561b4c9eda5f41c.json",
+					"name" : "mfcc_calc",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4
+					]
+				},
+				{
+					"build" : "RTNeural",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-RTNeural-Release-a4b2d23cb641798cdadc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "RTNeural",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "RTNeural/RTNeural",
+					"jsonFile" : "directory-RTNeural.RTNeural-Release-436a184bc37cd67414e8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "RTNeural/RTNeural",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "scripts",
+					"jsonFile" : "directory-scripts-Release-0573fbdaae33ba3dc862.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "scripts",
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						3
+					],
+					"name" : "StageCNRS2026",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2
+					],
+					"name" : "RTNeural",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-436b56ee8686e111aed6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@716782cb295ff54e4455",
+					"jsonFile" : "target-ALL_BUILD-Release-ae74b489c97f8f57711f.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "RTNeural::@5c40b2b27f12861aa5e2",
+					"jsonFile" : "target-RTNeural-Release-70d43fa8694538b094d8.json",
+					"name" : "RTNeural",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-c842971790590b5cfdd3.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "inf_architecture::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-inf_architecture-Release-0e6ff9900167a48bfdff.json",
+					"name" : "inf_architecture",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "mfcc_calc::@de1a740d5dc98ffd5d0e",
+					"jsonFile" : "target-mfcc_calc-Release-f19e955aa0347da3710d.json",
+					"name" : "mfcc_calc",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"jsonFile" : "directory-.-MinSizeRel-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4
+					]
+				},
+				{
+					"build" : "RTNeural",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-RTNeural-MinSizeRel-a4b2d23cb641798cdadc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "RTNeural",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "RTNeural/RTNeural",
+					"jsonFile" : "directory-RTNeural.RTNeural-MinSizeRel-436a184bc37cd67414e8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "RTNeural/RTNeural",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "scripts",
+					"jsonFile" : "directory-scripts-MinSizeRel-0573fbdaae33ba3dc862.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "scripts",
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						3
+					],
+					"name" : "StageCNRS2026",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2
+					],
+					"name" : "RTNeural",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-436b56ee8686e111aed6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@716782cb295ff54e4455",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-ae74b489c97f8f57711f.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "RTNeural::@5c40b2b27f12861aa5e2",
+					"jsonFile" : "target-RTNeural-MinSizeRel-b259beaac2317cdc726c.json",
+					"name" : "RTNeural",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-c842971790590b5cfdd3.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "inf_architecture::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-inf_architecture-MinSizeRel-bed8f49c6016ca6c2d18.json",
+					"name" : "inf_architecture",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "mfcc_calc::@de1a740d5dc98ffd5d0e",
+					"jsonFile" : "target-mfcc_calc-MinSizeRel-ae2d8e07bda69e28dd32.json",
+					"name" : "mfcc_calc",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4
+					]
+				},
+				{
+					"build" : "RTNeural",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-RTNeural-RelWithDebInfo-a4b2d23cb641798cdadc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "RTNeural",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "RTNeural/RTNeural",
+					"jsonFile" : "directory-RTNeural.RTNeural-RelWithDebInfo-436a184bc37cd67414e8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.11"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "RTNeural/RTNeural",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "scripts",
+					"jsonFile" : "directory-scripts-RelWithDebInfo-0573fbdaae33ba3dc862.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "scripts",
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						3
+					],
+					"name" : "StageCNRS2026",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4,
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2
+					],
+					"name" : "RTNeural",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-436b56ee8686e111aed6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@716782cb295ff54e4455",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-ae74b489c97f8f57711f.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "RTNeural::@5c40b2b27f12861aa5e2",
+					"jsonFile" : "target-RTNeural-RelWithDebInfo-56cee4a2ae4caaf56a58.json",
+					"name" : "RTNeural",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-c842971790590b5cfdd3.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "inf_architecture::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-inf_architecture-RelWithDebInfo-e4d3812096887ba43e47.json",
+					"name" : "inf_architecture",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "mfcc_calc::@de1a740d5dc98ffd5d0e",
+					"jsonFile" : "target-mfcc_calc-RelWithDebInfo-9b64435a80f228d9c8c0.json",
+					"name" : "mfcc_calc",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/build",
+		"source" : "C:/Users/alexa/OneDrive/Desktop/StageCNRS2026"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

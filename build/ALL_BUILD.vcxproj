@@ -181,6 +181,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{1E4E2D0A-0219-3C17-A941-5F4AAE593AFF}</Project>
       <Name>inf_architecture</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\alexa\OneDrive\Desktop\StageCNRS2026\build\scripts\mfcc_calc.vcxproj">
+      <Project>{B6BE946E-D65E-3C7B-AAEC-28C38BECD344}</Project>
+      <Name>mfcc_calc</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

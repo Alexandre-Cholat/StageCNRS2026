@@ -3,3 +3,4 @@ C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/build/CMakeFiles/ALL_BUILD.dir
 C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/build/CMakeFiles/ZERO_CHECK.dir
 C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/build/RTNeural/CMakeFiles/ALL_BUILD.dir
 C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/build/RTNeural/RTNeural/CMakeFiles/RTNeural.dir
+C:/Users/alexa/OneDrive/Desktop/StageCNRS2026/build/scripts/CMakeFiles/mfcc_calc.dir
