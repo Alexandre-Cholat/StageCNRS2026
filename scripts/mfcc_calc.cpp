@@ -128,14 +128,17 @@ int next_pow2(int n)
         p <<= 1;
     return p;
 }
-
-// hamming window
+// Hanning window
 void apply_hamming(std::vector<double> &frame)
 {
     int N = frame.size();
     for (int n = 0; n < N; n++)
     {
-        frame[n] *= 0.54 - 0.46 * cos(2 * M_PI * n / (N - 1));
+        // hamming window
+        // frame[n] *= 0.54 - 0.46 * cos(2 * M_PI * n / (N - 1));
+
+        // hanning window
+        frame[n] *= 0.5 * (1 - cos(2 * M_PI * n / (N - 1)));
     }
 }
 // FFT (slow)
@@ -375,7 +378,7 @@ std::vector<AudioFrame> mfcc_calc(const std::string &wav_path)
             {
                 mel[m] += power[k] * fbank[m][k];
             }
-            mel[m] = log(std::max(mel[m], 1e-10));
+            mel[m] = 10 * log10(std::max(mel[m], 1e-10));
         }
 
         // --- DCT ---
@@ -429,7 +432,6 @@ void write_csv(
     {
         file << frame.filename << ",";
         file << frame.frame_idx << ",";
-        file << frame.target_f0;
 
         for (int i = 0; i < 13; i++)
         {
@@ -446,7 +448,7 @@ int main()
 {
 
     auto frames = mfcc_calc("C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\LJSpeech-1.1\\LJSpeech-1.1\\big_wavs\\LJ001-0021.wav");
-    write_csv("C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\C++ audio-data_extraction\\output.csv", frames);
+    write_csv("C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\C++ audio-data_extraction\\cpp_mfcc_extraction.csv", frames);
 
     return 0;
 }
