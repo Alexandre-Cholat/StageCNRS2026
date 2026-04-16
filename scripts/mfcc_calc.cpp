@@ -10,6 +10,7 @@
 
 // extracts MFCCs and f0 from wavs to csv
 
+// to compile input in terminal : build/scripts/Debug/mfcc_calc.exe       
 struct WavHeader
 {
     char riff[4]; // "RIFF"
@@ -416,7 +417,7 @@ void write_csv(
     if (!file)
         throw std::runtime_error("Failed to open CSV file");
 
-    // Write header only if needed
+    // Write header only if needed ( should be frame_index not idx, insert time collumn)
     if (!file_exists && write_header)
     {
         file << "filename,frame_idx,target_f0";

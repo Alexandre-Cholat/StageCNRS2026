@@ -36,13 +36,13 @@ def visualize_comparison(cpp_csv_path, pytorch_csv_path, num_frames):
     plt.plot(x_axis, target_f0, label="Target F0", color='black', linewidth=2.5, linestyle='--')
     
     # Plot PyTorch (Offline)
-    plt.plot(x_axis, pyt_preds, label="PyTorch pred.", color='blue', alpha=0.7, linewidth=2)
+    plt.plot(x_axis, pyt_preds, label="Python pred.", color='blue', alpha=0.7, linewidth=2)
     
     # Plot C++ (Real-Time)
-    plt.plot(x_axis, cpp_preds, label="RTNeural pred.", color='red', alpha=0.7, linewidth=2)
+    plt.plot(x_axis, cpp_preds, label="C++ pred.", color='red', alpha=0.7, linewidth=2)
 
     # Aesthetics
-    plt.title(f"Offline vs Real-Time f0_pred - {num_frames} frames", fontsize=16)
+    plt.title(f"Python vs C++ MFCC extraction - f0 inference - {num_frames} frames", fontsize=16)
     plt.xlabel("Index", fontsize=12)
     plt.ylabel("log10 F0", fontsize=12)
     plt.legend(loc="upper right", fontsize=11)
@@ -56,8 +56,9 @@ def visualize_comparison(cpp_csv_path, pytorch_csv_path, num_frames):
 
 if __name__ == "__main__":
     # Update these with your exact generated filenames
-    CPP_CSV = "C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\audio-data-prediction\\real-time-corrected-predictions_2026-03-26_14-50-57.csv"
-    PYTORCH_CSV = "C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\audio-data-prediction\\pytorch-offline-preds_2026-03-26_13-57-40.csv"
+    CPP_CSV = "C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\audio-data-prediction\\cppMFCC-real-time-predictions_2026-04-04_13-48-34.csv"
+    PYTORCH_CSV = "C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\audio-data-prediction\\pythonMFCC-real-time-predictions_2026-04-04_13-47-01.csv"
+
     
     # Adjust start_frame and num_frames to isolate exactly one sentence
     visualize_comparison(CPP_CSV, PYTORCH_CSV, num_frames=200)

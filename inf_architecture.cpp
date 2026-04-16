@@ -180,7 +180,7 @@ int main()
 
         // load data pipeline
         std::vector<AudioFrame> frames = readCSV("C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\C++ audio-data_extraction\\cpp_mfcc_extraction.csv");
-        //readCSV("C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\audio-data_extraction\\10_test_wavs_MFCC_f0_extraction.csv");
+        // std::vector<AudioFrame> frames = readCSV("C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\audio-data_extraction\\10_test_wavs_MFCC_f0_extraction.csv");
         if (frames.empty())
             return 1;
 
