@@ -41,6 +41,7 @@ def plot_mfcc_comparison(csv_python, csv_cpp, mfcc_cols=['mfcc_0', 'mfcc_1', 'mf
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.fftpack import idct
+from scipy.stats import spearmanr
 
 # 1. Added target_wav and mel_cols as proper arguments
 def plot_mel_reconstruction(csv_python, csv_cpp, target_wav, mel_cols=['mel_0', 'mel_1', 'mel_2']):
@@ -79,7 +80,10 @@ def plot_mel_reconstruction(csv_python, csv_cpp, target_wav, mel_cols=['mel_0', 
         ax.plot(df_cpp_filtered['frame_index'], df_cpp_filtered[col], 
                 label=f'C++ {col}', linewidth=2, linestyle='--', alpha=0.8)
         
-        ax.set_title(f'Comparison of {col} ')
+        # Calculate Spearman correlation
+        corr, _ = spearmanr(df_py_filtered[col], df_cpp_filtered[col])
+        
+        ax.set_title(f'Comparison of {col} (Spearman r = {corr:.4f})')
         ax.set_ylabel('Log-Energy')
         ax.legend(loc='upper right')
         ax.grid(True, linestyle=':', alpha=0.6)
@@ -91,7 +95,7 @@ def plot_mel_reconstruction(csv_python, csv_cpp, target_wav, mel_cols=['mel_0', 
 # --- Execution ---
 # Note: Added 'r' before the string to handle Windows backslashes properly
 python_csv_path = r'C:\Users\alexa\OneDrive\Desktop\Stage GIPSA-lab\C++ audio-data_extraction\python_mfcc_extraction.csv' 
-cpp_csv_path = r'C:\Users\alexa\OneDrive\Desktop\Stage GIPSA-lab\C++ audio-data_extraction\cpp_mfcc_extraction.csv'
+cpp_csv_path = r'C:\Users\alexa\OneDrive\Desktop\Stage GIPSA-lab\C++ audio-data_extraction\cpp_mfcc_extraction-corrected.csv'
 wav_to_check = 'LJ001-0021.wav'
 
 print(f"Plotting comparison for {wav_to_check}...")
