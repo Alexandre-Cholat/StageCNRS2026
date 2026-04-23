@@ -9,11 +9,6 @@
 #include <stdexcept>
 #include <iostream>
 
-// extracts MFCCs and f0 from wavs to csv
-
-// g++ scripts\mfcc_calc.cpp -o mfcc_calc.exe
-// .\mfcc_calc.exe
-
 struct WavHeader
 {
     char riff[4]; // "RIFF"
@@ -33,8 +28,8 @@ struct AudioFrame
 {
     std::string filename;
     int frame_idx;
-    double time;     // Added time column
-    double log10_f0; // Replaced target_f0 with log10(f0)
+    double time;     
+    double log10_f0; 
     double mfcc[13];
 };
 
@@ -109,8 +104,8 @@ void apply_hamming(std::vector<double> &frame)
     int N = frame.size();
     for (int n = 0; n < N; n++)
     {
-        // On garde votre Hanning, qui correspond au defaut de Librosa
-        frame[n] *= 0.5 * (1 - cos(2 * M_PI * n / (N - 1)));
+        // FIX 3: Changed N - 1 to N to match Librosa's default periodic Hann window
+        frame[n] *= 0.5 * (1 - cos(2 * M_PI * n / N));
     }
 }
 
@@ -162,7 +157,6 @@ std::vector<double> power_spectrum_rt(const std::vector<double> &frame, int NFFT
     return power;
 }
 
-// --- YIN Algorithm for librosa equivalent f0 tracking ---
 double compute_yin(const std::vector<double> &frame, int sr, double fmin = 50.0, double fmax = 500.0, double threshold = 0.1)
 {
     int t_min = sr / fmax;
@@ -173,7 +167,6 @@ double compute_yin(const std::vector<double> &frame, int sr, double fmin = 50.0,
     if (W <= 0)
         return 0.0;
 
-    // 1. Difference function
     std::vector<double> df(t_max + 1, 0.0);
     for (int t = 1; t <= t_max; t++)
     {
@@ -184,7 +177,6 @@ double compute_yin(const std::vector<double> &frame, int sr, double fmin = 50.0,
         }
     }
 
-    // 2. Cumulative mean normalized difference function (CMNDF)
     std::vector<double> cmndf(t_max + 1, 1.0);
     double running_sum = 0.0;
     for (int t = 1; t <= t_max; t++)
@@ -193,7 +185,6 @@ double compute_yin(const std::vector<double> &frame, int sr, double fmin = 50.0,
         cmndf[t] = df[t] * t / (running_sum + 1e-12);
     }
 
-    // 3. Absolute thresholding to find early minimum
     int tau_estimate = -1;
     for (int t = t_min; t <= t_max; t++)
     {
@@ -208,7 +199,6 @@ double compute_yin(const std::vector<double> &frame, int sr, double fmin = 50.0,
         }
     }
 
-    // 4. Global minimum fallback if no trough goes below threshold
     if (tau_estimate == -1)
     {
         tau_estimate = t_min;
@@ -223,7 +213,6 @@ double compute_yin(const std::vector<double> &frame, int sr, double fmin = 50.0,
         }
     }
 
-    // 5. Parabolic interpolation for smoother tracking
     double peak = tau_estimate;
     if (tau_estimate > 0 && tau_estimate < t_max)
     {
@@ -240,7 +229,6 @@ double compute_yin(const std::vector<double> &frame, int sr, double fmin = 50.0,
     return peak > 0 ? sr / peak : 0.0;
 }
 
-// --- MODIFICATION 1 : Échelle de Slaney (Défaut Librosa) au lieu de HTK ---
 double hz_to_mel_slaney(double f)
 {
     double min_log_hz = 1000.0;
@@ -263,7 +251,6 @@ double mel_to_hz_slaney(double m)
     return m * (200.0 / 3.0);
 }
 
-// --- MODIFICATION 2 : Normalisation de surface du filterbank ---
 std::vector<std::vector<double>> mel_filterbank(int nfilt, int NFFT, int sr)
 {
     int num_bins = NFFT / 2 + 1;
@@ -343,19 +330,45 @@ std::vector<AudioFrame> mfcc_calc(const std::string &wav_path)
     if (pos != std::string::npos)
         filename = filename.substr(pos + 1);
 
-    int num_frames = (signal.size() - frame_len) / hop + 1;
+    // FIX 1: Frame count calculation & Reflection Padding for Librosa alignment
+    int original_len = signal.size();
+    int num_frames = original_len / hop + 1; 
+
+    int pad_length = NFFT / 2;
+    std::vector<double> padded_signal(original_len + 2 * pad_length, 0.0);
+    
+    // Left Reflection
+    for (int i = 0; i < pad_length; i++) {
+        int idx = i + 1;
+        if (idx >= original_len) idx = original_len - 1;
+        padded_signal[pad_length - 1 - i] = signal[idx]; 
+    }
+    // Copy center
+    for (int i = 0; i < original_len; i++) {
+        padded_signal[pad_length + i] = signal[i];
+    }
+    // Right Reflection
+    for (int i = 0; i < pad_length; i++) {
+        int idx = original_len - 2 - i;
+        if (idx < 0) idx = 0;
+        padded_signal[pad_length + original_len + i] = signal[idx];
+    }
+    signal = padded_signal; 
 
     std::vector<double> frame(frame_len);
     std::vector<std::vector<double>> all_mels;
     std::vector<double> f0_track(num_frames, 0.0);
+    std::vector<bool> is_voiced(num_frames, false);
     double max_mel = -1e10;
 
-    // Passe 1 : Spectrogramme Mel, Max Global, et f0
+    int offset = (NFFT - frame_len) / 2;
+
     for (int i = 0; i < num_frames; i++)
     {
+        // FIX 4: Center the frame inside NFFT explicitly
         for (int j = 0; j < frame_len; j++)
         {
-            frame[j] = signal[i * hop + j];
+            frame[j] = signal[i * hop + offset + j];
         }
 
         apply_hamming(frame);
@@ -374,18 +387,42 @@ std::vector<AudioFrame> mfcc_calc(const std::string &wav_path)
         }
         all_mels.push_back(mel);
 
-        // --- librosa.yin Equivalent Extraction ---
+        // YIN F0 extraction looking at full padded frame
         std::vector<double> yin_frame(NFFT, 0.0);
-        for (int j = 0; j < NFFT && (i * hop + j) < signal.size(); j++)
+        for (int j = 0; j < NFFT; j++)
         {
             yin_frame[j] = signal[i * hop + j];
         }
 
         double f0 = compute_yin(yin_frame, sr, 50.0, 500.0);
-        f0_track[i] = (f0 > 0.0) ? std::log10(f0) : 0.0;
+        if (f0 > 0.0) {
+            f0_track[i] = std::log10(f0);
+            is_voiced[i] = true;
+        }
     }
 
-    // Passe 2 : Limite de bruit (Top DB) et DCT
+    // FIX 2: Linear Interpolation for unvoiced frames to repair dataset distribution
+    for (int i = 0; i < num_frames; i++) {
+        if (!is_voiced[i]) {
+            int prev = i - 1;
+            while (prev >= 0 && !is_voiced[prev]) prev--;
+            
+            int next = i + 1;
+            while (next < num_frames && !is_voiced[next]) next++;
+            
+            if (prev >= 0 && next < num_frames) {
+                double fraction = (double)(i - prev) / (next - prev);
+                f0_track[i] = f0_track[prev] + fraction * (f0_track[next] - f0_track[prev]);
+            } else if (prev >= 0) {
+                f0_track[i] = f0_track[prev]; // Carry last valid value forward
+            } else if (next < num_frames) {
+                f0_track[i] = f0_track[next]; // Carry next valid value backward
+            } else {
+                f0_track[i] = 0.0; // Fail-safe (only if whole file is silence)
+            }
+        }
+    }
+
     double top_db = 80.0;
     for (int i = 0; i < num_frames; i++)
     {
@@ -399,8 +436,8 @@ std::vector<AudioFrame> mfcc_calc(const std::string &wav_path)
         AudioFrame af;
         af.filename = filename;
         af.frame_idx = i;
-        af.time = 0.0;             // Enforced 0.0 per instructions
-        af.log10_f0 = f0_track[i]; // Stores the log10 equivalent computed above
+        af.time = 0.0;             
+        af.log10_f0 = f0_track[i]; // Uses smoothed F0 track
 
         for (int j = 0; j < 13; j++)
         {
@@ -424,7 +461,6 @@ void write_csv(const std::string &output_path, const std::vector<AudioFrame> &da
 
     if (!file_exists && write_header)
     {
-        // Exact header sequence defined in prompt
         file << "filename,frame_index,time,log10(f0),mfcc_0,mfcc_1,mfcc_2,mfcc_3,mfcc_4,mfcc_5,mfcc_6,mfcc_7,mfcc_8,mfcc_9,mfcc_10,mfcc_11,mfcc_12\n";
     }
 
