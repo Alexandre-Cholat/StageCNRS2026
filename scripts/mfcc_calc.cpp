@@ -9,6 +9,9 @@
 #include <stdexcept>
 #include <iostream>
 
+// build, then run :
+// .\build\scripts\Debug\mfcc_calc.exe
+
 struct WavHeader
 {
     char riff[4]; // "RIFF"
