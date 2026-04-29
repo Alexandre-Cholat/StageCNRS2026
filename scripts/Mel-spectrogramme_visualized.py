@@ -54,21 +54,19 @@ plt.plot(freqs_smooth, spl_cible(freqs_smooth), color='black', linestyle='--', l
 
 colors = plt.cm.magma(np.linspace(0.2, 0.9, 8))
 
-# 5. Boucle de reconstruction cumulative (De C1 à C7)
-for i in range(1, 6):
-    # Pour reconstruire l'enveloppe, on a besoin d'un tableau de 128 valeurs (n_mels)
+# On choisit de tracer les cumuls jusqu'à ces coefficients précis
+etapes_a_tracer = [1, 2, 4, 7, 11, 12] 
+colors = plt.cm.magma(np.linspace(0.2, 0.9, len(etapes_a_tracer)))
+
+# 5. Boucle de reconstruction
+for idx, i in enumerate(etapes_a_tracer):
     mfccs_partiels = np.zeros(n_mels)
-    
-    # On insère C0 jusqu'à Ci, et on laisse le reste à zéro
     mfccs_partiels[0:i+1] = mfccs[0:i+1]
     
-    # Transformée Inverse (IDCT) : Des MFCC vers le spectre Mel en dB
     mel_reconstruit_db = scipy.fftpack.idct(mfccs_partiels, type=2, norm='ortho')
-    
-    # Lissage spline pour l'affichage
     spl_recon = make_interp_spline(mel_center_freqs, mel_reconstruit_db, k=3)
     
-    
+    # Nomenclature rigoureuse
     if i == 1:
         label = "Enveloppe (MFCC 0 à 1)"
     elif i == 2:
@@ -76,9 +74,7 @@ for i in range(1, 6):
     else:
         label = f"Enveloppe (MFCC 0 à {i})"
         
-    plt.plot(freqs_smooth, spl_recon(freqs_smooth), color=colors[i], label=label, linewidth=1 + (i*0.2))
-
-
+    plt.plot(freqs_smooth, spl_recon(freqs_smooth), color=colors[idx], label=label, linewidth=1.5 + (idx*0.2))
 
 # Finitions
 plt.xlim(0, 8000)
