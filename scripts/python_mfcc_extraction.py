@@ -94,7 +94,7 @@ def extract_features_folder(folder_path):
 
 #single file extraction
 column_names = ['filename', 'frame_index', 'time', 'log10(f0)'] + [f'mfcc_{i}' for i in range(13)]
-features = extract_synchro_features_file("C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\LJSpeech-1.1\\LJSpeech-1.1\\big_wavs\\LJ001-0021.wav")
+    features = extract_synchro_features_file("C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\LJSpeech-1.1\\LJSpeech-1.1\\big_wavs\\LJ001-0021.wav")
 df = pd.DataFrame(features, columns=column_names)
 df.to_csv('C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\C++ audio-data_extraction\\python_mfcc_extraction-1.csv', index=False)
 print(f"Saved to C:\\Users\\alexa\\OneDrive\\Desktop\\Stage GIPSA-lab\\C++ audio-data_extraction\\python_mfcc_extraction-1.csv")
